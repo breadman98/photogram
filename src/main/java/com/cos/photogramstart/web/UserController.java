@@ -21,7 +21,7 @@ public class UserController {
 
     @GetMapping("/user/{id}/update")
     public String update(@PathVariable int id, @AuthenticationPrincipal PrincipalDetails principalDetails){
-        // 어노테이션 사용
+        // @AuthenticationPrincipal 어노테이션 사용해서 Authentication 객체에 바로접근
         System.out.println("세션정보:"+principalDetails.getUser());
 
         // 직접 찾기
