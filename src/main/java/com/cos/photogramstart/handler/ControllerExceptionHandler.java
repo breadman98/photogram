@@ -25,7 +25,7 @@ public class ControllerExceptionHandler {
 
     @ExceptionHandler(CustomValidationApiException.class)
     // Ajax 통신에 대한 에러이므로 CMResponseDto를 리턴
-    public ResponseEntity<CMResponseDto<?>> validationApiException(CustomValidationException e){
+    public ResponseEntity<CMResponseDto<?>> validationApiException(CustomValidationApiException e){
         return new ResponseEntity<>(new CMResponseDto<>(-1,e.getMessage(),e.getErrorMap()),HttpStatus.BAD_REQUEST);
     }
 }
