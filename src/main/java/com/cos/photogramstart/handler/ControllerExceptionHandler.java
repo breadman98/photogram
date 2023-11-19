@@ -30,7 +30,7 @@ public class ControllerExceptionHandler {
         return new ResponseEntity<>(new CMResponseDto<>(-1,e.getMessage(),e.getErrorMap()),HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(CustomValidationApiException.class)
+    @ExceptionHandler(CustomApiException.class)
     public ResponseEntity<CMResponseDto<?>> apiException(CustomApiException e){
         return new ResponseEntity<>(new CMResponseDto<>(-1,e.getMessage(),null),HttpStatus.BAD_REQUEST);
     }
