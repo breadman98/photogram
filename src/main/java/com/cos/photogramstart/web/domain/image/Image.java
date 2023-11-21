@@ -16,7 +16,7 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String catpion; // 사진 넣을때 같이 넣는 텍스트
+    private String caption; // 사진 넣을때 같이 넣는 텍스트
     private String postImageUrl; // 사진을 전송받아서 그 사진을 서버의 특정 폴더에 저장. DB에 그 저장된 경로를 insert
 
     @ManyToOne

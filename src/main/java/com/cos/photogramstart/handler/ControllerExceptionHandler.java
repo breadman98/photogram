@@ -20,8 +20,14 @@ public class ControllerExceptionHandler {
     @ExceptionHandler(CustomValidationException.class)
     // 런타임 익셉션이 발동하는 모든 것을 이 함수가 가로챌것이다.
     // 클라이언트에게 응답하므로 Script를 리턴
-    public String validationException(CustomValidationException e){
-       return Script.back(e.getErrorMap().toString());
+    public String validationException(CustomValidationException e)
+    {
+        if(e.getErrorMap() == null){
+            return Script.back(e.getMessage());
+        }else{
+            return Script.back(e.getErrorMap().toString());
+        }
+
     }
 
     @ExceptionHandler(CustomValidationApiException.class)
